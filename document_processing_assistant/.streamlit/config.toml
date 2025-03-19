@@ -1,0 +1,12 @@
+[ui]
+# Hide the "Deploy" button
+deploy = false
+
+[server]
+# By default, streamlit checks for package updates and displays a message on startup.
+# This can be disabled.
+enableServerHeadless = true
+
+[deprecation]
+# Disable deprecation warnings
+showPyplotGlobalUse = false

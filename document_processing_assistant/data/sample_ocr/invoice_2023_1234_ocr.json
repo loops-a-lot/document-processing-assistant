@@ -1,0 +1,58 @@
+{
+  "Blocks": [
+    {
+      "BlockType": "PAGE",
+      "Page": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 1.0,
+          "Height": 1.0,
+          "Left": 0.0,
+          "Top": 0.0
+        }
+      }
+    },
+    {
+      "BlockType": "LINE",
+      "Text": "INV-2023-1234",
+      "Page": 1,
+      "Confidence": 99.5,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.2,
+          "Height": 0.03,
+          "Left": 0.7,
+          "Top": 0.1
+        }
+      }
+    },
+    {
+      "BlockType": "LINE",
+      "Text": "Acme Corporation",
+      "Page": 1,
+      "Confidence": 98.7,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.3,
+          "Height": 0.03,
+          "Left": 0.1,
+          "Top": 0.2
+        }
+      }
+    },
+    {
+      "BlockType": "LINE",
+      "Text": "Total Amount: $1356.25",
+      "Page": 1,
+      "Confidence": 97.8,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.25,
+          "Height": 0.03,
+          "Left": 0.6,
+          "Top": 0.7
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+    "values": [
+      {
+        "name": "invoice_number",
+        "value": "INV-2023-1234",
+        "type": "string",
+        "rules": ["required", "format: INV-YYYY-XXXX"]
+      },
+      {
+        "name": "invoice_date",
+        "value": "2023-09-15",
+        "type": "date",
+        "rules": ["required", "format: YYYY-MM-DD"]
+      },
+      {
+        "name": "due_date",
+        "value": "2023-10-15",
+        "type": "date",
+        "rules": ["required", "format: YYYY-MM-DD", "must be after invoice_date"]
+      },
+      {
+        "name": "customer_name",
+        "value": "Acme Corporation",
+        "type": "string",
+        "rules": ["required", "max length: 100"]
+      },
+      {
+        "name": "customer_id",
+        "value": "ACME001",
+        "type": "string",
+        "rules": ["required", "alphanumeric"]
+      },
+      {
+        "name": "subtotal",
+        "value": "1250.00",
+        "type": "number",
+        "rules": ["required", "numeric", "precision: 2"]
+      },
+      {
+        "name": "tax_rate",
+        "value": "8.5",
+        "type": "number",
+        "rules": ["required", "numeric", "range: 0-100"]
+      },
+      {
+        "name": "tax_amount",
+        "value": "106.25",
+        "type": "number",
+        "rules": ["required", "numeric", "precision: 2", "formula: subtotal * (tax_rate/100)"]
+      },
+      {
+        "name": "total_amount",
+        "value": "1356.25",
+        "type": "number",
+        "rules": ["required", "numeric", "precision: 2", "formula: subtotal + tax_amount"]
+      },
+      {
+        "name": "payment_terms",
+        "value": "Net 30",
+        "type": "string",
+        "rules": ["required", "one of: Net 15, Net 30, Net 45, Net 60"]
+      },
+      {
+        "name": "currency",
+        "value": "USD",
+        "type": "string",
+        "rules": ["required", "length: 3", "uppercase"]
+      }
+    ],
+    "_provenance": [
+      {
+        "timestamp": "2023-09-16T14:30:22.456Z",
+        "user": {
+          "name": "John Smith",
+          "email": "john.smith@example.com"
+        },
+        "document": "./data/sample_documents/invoice_2023_1234.pdf",
+        "changes": [
+          {
+            "field": "tax_amount",
+            "old_value": "106.50",
+            "new_value": "106.25",
+            "action": "modified"
+          }
+        ],
+        "notes": "Corrected tax calculation error"
+      },
+      {
+        "timestamp": "2023-09-16T14:31:05.123Z",
+        "user": {
+          "name": "John Smith",
+          "email": "john.smith@example.com"
+        },
+        "document": "./data/sample_documents/invoice_2023_1234.pdf",
+        "changes": [
+          {
+            "field": "total_amount",
+            "old_value": "1356.50",
+            "new_value": "1356.25",
+            "action": "modified"
+          }
+        ],
+        "notes": "Updated total to reflect corrected tax"
+      }
+    ]
+  }

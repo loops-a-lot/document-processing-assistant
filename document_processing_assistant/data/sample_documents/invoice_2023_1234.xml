@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice>
+    <invoice_number>INV-2023-1234</invoice_number>
+    <date>2023-09-15</date>
+    <due_date>2023-10-15</due_date>
+    <customer>
+        <name>Acme Corporation</name>
+        <id>ACME001</id>
+    </customer>
+    <items>
+        <item>
+            <description>Product A</description>
+            <quantity>2</quantity>
+            <unit_price>250.00</unit_price>
+            <total>500.00</total>
+        </item>
+        <item>
+            <description>Product B</description>
+            <quantity>3</quantity>
+            <unit_price>250.00</unit_price>
+            <total>750.00</total>
+        </item>
+    </items>
+    <subtotal>1250.00</subtotal>
+    <tax_rate>8.5</tax_rate>
+    <tax_amount>106.25</tax_amount>
+    <total_amount>1356.25</total_amount>
+    <payment_terms>Net 30</payment_terms>
+    <currency>USD</currency>
+</invoice>
