@@ -36,6 +36,16 @@ def check_environment():
     """Check if the environment is set up correctly"""
     if not os.path.exists(PROJECT_ROOT):
         print(f"Error: Project directory '{PROJECT_ROOT}' not found.")
+        
+        # Check if the user cloned with wrong name (dashes instead of underscores)
+        dash_dir = PROJECT_ROOT.replace("_", "-")
+        if os.path.exists(dash_dir):
+            print(f"Found directory with dashes instead of underscores: {dash_dir}")
+            print("The repository name should use underscores, not dashes.")
+            print("Please rename the directory to use underscores instead of dashes:")
+            print(f"  mv {os.path.basename(dash_dir)} {os.path.basename(PROJECT_ROOT)}")
+            return False
+        
         print("Please run setup_env.py first to create the project structure.")
         return False
     

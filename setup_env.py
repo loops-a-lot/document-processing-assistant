@@ -81,7 +81,17 @@ def main():
     
     # Check if project directory exists
     if not os.path.exists(PROJECT_ROOT):
-        print(f"Directory '{PROJECT_ROOT}' not found. Creating it...")
+        print(f"Project directory '{PROJECT_ROOT}' not found.")
+        
+        # Check if the user cloned with wrong name (dashes instead of underscores)
+        dash_dir = PROJECT_ROOT.replace("_", "-")
+        if os.path.exists(dash_dir):
+            print(f"Found directory with dashes instead of underscores: {dash_dir}")
+            print("Please rename the directory to use underscores instead of dashes:")
+            print(f"  mv {os.path.basename(dash_dir)} {os.path.basename(PROJECT_ROOT)}")
+            sys.exit(1)
+            
+        print("Creating project directory...")
         try:
             os.makedirs(PROJECT_ROOT, exist_ok=True)
             print(f"Created directory: {PROJECT_ROOT}")
