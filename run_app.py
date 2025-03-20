@@ -32,7 +32,7 @@ def check_environment():
     """Check if the environment is set up correctly"""
     if not os.path.exists(PROJECT_ROOT):
         print(f"Error: Project directory '{PROJECT_ROOT}' not found.")
-        print("Please run setup_project.py first.")
+        print("Please run setup_env.py first to create the project structure.")
         return False
     
     venv_python = get_venv_python()

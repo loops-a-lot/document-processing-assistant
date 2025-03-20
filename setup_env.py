@@ -77,9 +77,15 @@ def main():
     
     # Check if project directory exists
     if not os.path.exists(PROJECT_ROOT):
-        print(f"Error: Project directory '{PROJECT_ROOT}' not found.")
-        print("Please run setup_project.py first.")
-        sys.exit(1)
+        print(f"Directory '{PROJECT_ROOT}' not found. Creating it...")
+        try:
+            os.makedirs(PROJECT_ROOT, exist_ok=True)
+            print(f"Created directory: {PROJECT_ROOT}")
+        except Exception as e:
+            print(f"Error creating directory: {e}")
+            sys.exit(1)
+    else:
+        print(f"Project directory '{PROJECT_ROOT}' already exists.")
     
     # Create virtual environment
     create_virtual_environment()
