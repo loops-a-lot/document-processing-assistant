@@ -8,9 +8,13 @@ import os
 import subprocess
 import sys
 import platform
+from pathlib import Path
+
+# Get the directory where this script is located
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Project configuration
-PROJECT_ROOT = "document_processing_assistant"
+PROJECT_ROOT = os.path.join(SCRIPT_DIR, "document_processing_assistant")
 VENV_NAME = "doc_processing_env"
 
 def check_python_version():
